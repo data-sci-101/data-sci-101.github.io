@@ -1,0 +1,388 @@
+[
+  {
+    "objectID": "course-syllabus.html",
+    "href": "course-syllabus.html",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Your syllabus goes here. For a sample syllabus, see https://sta199-f22-1.github.io/course-syllabus.html.\nNote that you can download a PDF of the syllabus on the right.",
+    "crumbs": [
+      "Course information",
+      "Syllabus"
+    ]
+  },
+  {
+    "objectID": "slides/02/02-gg.html#ggplot2-in-tidyverse",
+    "href": "slides/02/02-gg.html#ggplot2-in-tidyverse",
+    "title": "Grammar of graphics",
+    "section": "ggplot2 \\(\\in\\) tidyverse",
+    "text": "ggplot2 \\(\\in\\) tidyverse\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot2 is tidyverse’s data visualization package\nStructure of the code for plots can be summarized as\n\nggplot(data = [dataset], \n       mapping = aes(x = [x-variable], \n                     y = [y-variable])) +\n   geom_xxx() +\n   other options"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#data-palmer-penguins",
+    "href": "slides/02/02-gg.html#data-palmer-penguins",
+    "title": "Grammar of graphics",
+    "section": "Data: Palmer Penguins",
+    "text": "Data: Palmer Penguins\nMeasurements for penguin species, island in Palmer Archipelago, size (flipper length, body mass, bill dimensions), and sex.\n\n\n\n\n\n\n\n\n\n\n\nlibrary(palmerpenguins)\nglimpse(penguins)\n\nRows: 344\nColumns: 8\n$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgers…\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, 42.0, 37.8, 37.8, 41.1, 38.6, 34.6, 36.6, 38.7, 42.5, 34.4, 46.0, 37.8, 37.7, 35.9, 38.2, 38.8, 35.3, 40.6, 40.5, 37.9, …\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, 20.2, 17.1, 17.3, 17.6, 21.2, 21.1, 17.8, 19.0, 20.7, 18.4, 21.5, 18.3, 18.7, 19.2, 18.1, 17.2, 18.9, 18.6, 17.9, 18.6, …\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186, 180, 182, 191, 198, 185, 195, 197, 184, 194, 174, 180, 189, 185, 180, 187, 183, 187, 172, 180, 178, 178, 188, 184, 195…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, 4250, 3300, 3700, 3200, 3800, 4400, 3700, 3450, 4500, 3325, 4200, 3400, 3600, 3800, 3950, 3800, 3800, 3550, 3200, 3150, …\n$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, NA, NA, female, male, male, female, female, male, female, male, female, male, female, male, male, female, male…\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section",
+    "href": "slides/02/02-gg.html#section",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "PlotCode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = penguins, \n       mapping = aes(x = bill_depth_mm, y = bill_length_mm,\n                     color = species)) +\n  geom_point() +\n  labs(title = \"Bill depth and length\",\n       subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n       x = \"Bill depth (mm)\", y = \"Bill length (mm)\",\n       color = \"Species\")"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section-1",
+    "href": "slides/02/02-gg.html#section-1",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "Start with the penguins data frame\n\n\n\nggplot(data = penguins)"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section-2",
+    "href": "slides/02/02-gg.html#section-2",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "Start with the penguins data frame, map bill depth to the x-axis\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_depth_mm))"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section-3",
+    "href": "slides/02/02-gg.html#section-3",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "Start with the penguins data frame, map bill depth to the x-axis and map bill length to the y-axis.\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_depth_mm,\n                     y = bill_length_mm))"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section-4",
+    "href": "slides/02/02-gg.html#section-4",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "Start with the penguins data frame, map bill depth to the x-axis and map bill length to the y-axis. Represent each observation with a point\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_depth_mm,\n                     y = bill_length_mm)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section-5",
+    "href": "slides/02/02-gg.html#section-5",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "Start with the penguins data frame, map bill depth to the x-axis and map bill length to the y-axis. Represent each observation with a point and map species to the color of each point.\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_depth_mm,\n                     y = bill_length_mm,\n                     color = species)) +\n  geom_point()"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section-6",
+    "href": "slides/02/02-gg.html#section-6",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "Start with the penguins data frame, map bill depth to the x-axis and map bill length to the y-axis. Represent each observation with a point and map species to the color of each point. Title the plot “Bill depth and length”\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_depth_mm,\n                     y = bill_length_mm,\n                     color = species)) +\n  geom_point() +\n  labs(title = \"Bill depth and length\")"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section-7",
+    "href": "slides/02/02-gg.html#section-7",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "Start with the penguins data frame, map bill depth to the x-axis and map bill length to the y-axis. Represent each observation with a point and map species to the color of each point. Title the plot “Bill depth and length”, add the subtitle “Dimensions for Adelie, Chinstrap, and Gentoo Penguins”\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_depth_mm,\n                     y = bill_length_mm,\n                     color = species)) +\n  geom_point() +\n  labs(title = \"Bill depth and length\",\n       subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\")"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section-8",
+    "href": "slides/02/02-gg.html#section-8",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "Start with the penguins data frame, map bill depth to the x-axis and map bill length to the y-axis. Represent each observation with a point and map species to the color of each point. Title the plot “Bill depth and length”, add the subtitle “Dimensions for Adelie, Chinstrap, and Gentoo Penguins”, label the x and y axes as “Bill depth (mm)” and “Bill length (mm)”, respectively\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_depth_mm,\n                     y = bill_length_mm,\n                     color = species)) +\n  geom_point() +\n  labs(title = \"Bill depth and length\",\n       subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n       x = \"Bill depth (mm)\", y = \"Bill length (mm)\")"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section-9",
+    "href": "slides/02/02-gg.html#section-9",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "Start with the penguins data frame, map bill depth to the x-axis and map bill length to the y-axis. Represent each observation with a point and map species to the color of each point. Title the plot “Bill depth and length”, add the subtitle “Dimensions for Adelie, Chinstrap, and Gentoo Penguins”, label the x and y axes as “Bill depth (mm)” and “Bill length (mm)”, respectively, label the legend “Species”\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_depth_mm,\n                     y = bill_length_mm,\n                     color = species)) +\n  geom_point() +\n  labs(title = \"Bill depth and length\",\n       subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n       x = \"Bill depth (mm)\", y = \"Bill length (mm)\",\n       color = \"Species\") #&lt;&lt;"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section-10",
+    "href": "slides/02/02-gg.html#section-10",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "Start with the penguins data frame, map bill depth to the x-axis and map bill length to the y-axis. Represent each observation with a point and map species to the color of each point. Title the plot “Bill depth and length”, add the subtitle “Dimensions for Adelie, Chinstrap, and Gentoo Penguins”, label the x and y axes as “Bill depth (mm)” and “Bill length (mm)”, respectively, label the legend “Species”, and add a caption for the data source.\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_depth_mm,\n                     y = bill_length_mm,\n                     color = species)) +\n  geom_point() +\n  labs(title = \"Bill depth and length\",\n       subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n       x = \"Bill depth (mm)\", y = \"Bill length (mm)\",\n       color = \"Species\",\n       caption = \"Source: Palmer Station LTER / palmerpenguins package\")"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section-11",
+    "href": "slides/02/02-gg.html#section-11",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "Start with the penguins data frame, map bill depth to the x-axis and map bill length to the y-axis. Represent each observation with a point and map species to the color of each point. Title the plot “Bill depth and length”, add the subtitle “Dimensions for Adelie, Chinstrap, and Gentoo Penguins”, label the x and y axes as “Bill depth (mm)” and “Bill length (mm)”, respectively, label the legend “Species”, and add a caption for the data source. Finally, use a discrete color scale that is designed to be perceived by viewers with common forms of color blindness.\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_depth_mm,\n                     y = bill_length_mm,\n                     color = species)) +\n  geom_point() +\n  labs(title = \"Bill depth and length\",\n       subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n       x = \"Bill depth (mm)\", y = \"Bill length (mm)\",\n       color = \"Species\",\n       caption = \"Source: Palmer Station LTER / palmerpenguins package\") +\n  scale_color_viridis_d()"
+  },
+  {
+    "objectID": "slides/02/02-gg.html#section-12",
+    "href": "slides/02/02-gg.html#section-12",
+    "title": "Grammar of graphics",
+    "section": "",
+    "text": "PlotCodeNarrative\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nggplot(data = penguins,\n       mapping = aes(x = bill_depth_mm,\n                     y = bill_length_mm,\n                     color = species)) +\n  geom_point() +\n  labs(title = \"Bill depth and length\",\n       subtitle = \"Dimensions for Adelie, Chinstrap, and Gentoo Penguins\",\n       x = \"Bill depth (mm)\", y = \"Bill length (mm)\",\n       color = \"Species\",\n       caption = \"Source: Palmer Station LTER / palmerpenguins package\") +\n  scale_color_viridis_d()\n\n\n\nStart with the penguins data frame, map bill depth to the x-axis and map bill length to the y-axis.\nRepresent each observation with a point and map species to the color of each point.\nTitle the plot “Bill depth and length”, add the subtitle “Dimensions for Adelie, Chinstrap, and Gentoo Penguins”, label the x and y axes as “Bill depth (mm)” and “Bill length (mm)”, respectively, label the legend “Species”, and add a caption for the data source.\nFinally, use a discrete color scale that is designed to be perceived by viewers with common forms of color blindness."
+  },
+  {
+    "objectID": "slides/02/02-gg.html#more-slides",
+    "href": "slides/02/02-gg.html#more-slides",
+    "title": "Grammar of graphics",
+    "section": "More slides",
+    "text": "More slides\nAdd more slides as needed…\n\n\n\n🔗 data-sci-101.github.io"
+  },
+  {
+    "objectID": "hw/hw-1.html",
+    "href": "hw/hw-1.html",
+    "title": "HW 1 - Data visualization",
+    "section": "",
+    "text": "Important\n\n\n\nThis homework is due [some date in the future].",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#packages",
+    "href": "hw/hw-1.html#packages",
+    "title": "HW 1 - Data visualization",
+    "section": "Packages",
+    "text": "Packages\n\nlibrary(tidyverse)\nlibrary(openintro)",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#guidelines-tips",
+    "href": "hw/hw-1.html#guidelines-tips",
+    "title": "HW 1 - Data visualization",
+    "section": "Guidelines + tips",
+    "text": "Guidelines + tips\nAs we’ve discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.\nRemember that continuing to develop a sound workflow for reproducible data analysis is important as you complete this homework and other assignments in this course. There will be periodic reminders in this assignment to remind you to knit, commit, and push your changes to GithHub. You should have at least 3 commits with meaningful commit messages by the end of the assignment.\n\n\n\n\n\n\nNote\n\n\n\nNote: Do not let R output answer the question for you unless the question specifically asks for just a plot. For example, if the question asks for the number of columns in the data set, please type out the number of columns. You are subject to lose points if you do not.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#workflow-formatting",
+    "href": "hw/hw-1.html#workflow-formatting",
+    "title": "HW 1 - Data visualization",
+    "section": "Workflow + formatting",
+    "text": "Workflow + formatting\nMake sure to\n\nUpdate author name on your document.\nLabel all code chunks informatively and concisely.\nFollow the Tidyverse code style guidelines.\nMake at least 3 commits.\nResize figures where needed, avoid tiny or huge plots.\nTurn in an organized, well formatted document.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#data-1-duke-forest-houses",
+    "href": "hw/hw-1.html#data-1-duke-forest-houses",
+    "title": "HW 1 - Data visualization",
+    "section": "Data 1: Duke Forest houses",
+    "text": "Data 1: Duke Forest houses\n\n\n\n\n\n\nNote\n\n\n\nUse this dataset for Exercises 1 and 2.\n\n\nFor the following two exercises you will work with data on houses that were sold in the Duke Forest neighborhood of Durham, NC in November 2020. The duke_forest dataset comes from the openintro package. You can see a list of the variables on the package website or by running ?duke_forest in your console.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-1",
+    "href": "hw/hw-1.html#exercise-1",
+    "title": "HW 1 - Data visualization",
+    "section": "Exercise 1",
+    "text": "Exercise 1\nSuppose you’re helping some family friends who are looking to buy a house in Duke Forest. As they browse Zillow listings, they realize some houses have garages and others don’t, and they wonder: Does having a garage make a difference?\nLuckily, you can help them answer this question with data visualization!\n\nMake histograms of the prices of houses in Duke Forest based on whether they have a garage.\n\nIn order to do this, you will first need to create a new variable called garage (with levels \"Garage\" and \"No garage\").\nBelow is the code for creating this new variable. Here, we mutate() the duke_forest data frame to add a new variable called garage which takes the value \"Garage\" if the text string \"Garage\" is detected in the parking variable and takes the test string \"No garage\" if not.\n\n\n\nduke_forest |&gt;\n  mutate(garage = if_else(str_detect(parking, \"Garage\"),   \"Garage\", \"No garage\"))\n\n\nThen, facet by garage and use different colors for the two facets.\nChoose an appropriate binwidth and decide whether a legend is needed, and turn it off if not.\nInclude informative title and axis labels.\nFinally, include a brief (2-3 sentence) narrative comparing the distributions of prices of Duke Forest houses that do and don’t have garages. Your narrative should touch on whether having a garage “makes a difference” in terms of the price of the house.\n\n\nNow is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-2",
+    "href": "hw/hw-1.html#exercise-2",
+    "title": "HW 1 - Data visualization",
+    "section": "Exercise 2",
+    "text": "Exercise 2\nIt’s expected that within any given marker larger houses will be priced higher. It’s also expected that the age of the house will have an effect on the price. However in some markets new houses might be more expensive while in others new construction might mean “no character” and hence be less expensive. So your family friends ask: “In Duke Forest, do houses that are bigger and more expensive tend to be newer ones than those that are smaller and cheaper?”\nOnce again, data visualization skills to the rescue!\n\nCreate a scatter plot to exploring the relationship between price and area, conditioning for year_built.\nUse geom_smooth() with the argument se = FALSE to add a smooth curve fit to the data and color the points by year_built.\nInclude informative title, axis, and legend labels.\nDiscuss each of the following claims (1-2 sentences per claim). Your discussion should touch on specific things you observe in your plot as evidence for or against the claims.\n\nClaim 1: Larger houses are priced higher.\nClaim 2: Newer houses are priced higher.\nClaim 3: Bigger and more expensive houses tend to be newer ones than smaller and cheaper ones.\n\n\n\nNow is a good time to render, commit, and push.\nMake sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#data-2-brfss",
+    "href": "hw/hw-1.html#data-2-brfss",
+    "title": "HW 1 - Data visualization",
+    "section": "Data 2: BRFSS",
+    "text": "Data 2: BRFSS\n\n\n\n\n\n\nNote\n\n\n\nUse this dataset for Exercises 3 to 5.\n\n\n\nThe Behavioral Risk Factor Surveillance System (BRFSS) is the nation’s premier system of health-related telephone surveys that collect state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services. Established in 1984 with 15 states, BRFSS now collects data in all 50 states as well as the District of Columbia and three U.S. territories. BRFSS completes more than 400,000 adult interviews each year, making it the largest continuously conducted health survey system in the world.\nSource: cdc.gov/brfss\n\nIn the following exercises we will work with data from the 2020 BRFSS survey. The originally come from here, though we will work with a random sample of responses and a small number of variables from the data provided. These have already been sampled for you and the dataset you’ll use can be found in the data folder of your repo. It’s called brfss.csv.\n\nbrfss &lt;- read_csv(\"data/brfss.csv\")",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-3",
+    "href": "hw/hw-1.html#exercise-3",
+    "title": "HW 1 - Data visualization",
+    "section": "Exercise 3",
+    "text": "Exercise 3\n\nHow many rows are in the brfss dataset? What does each row represent?\nHow many columns are in the brfss dataset? Indicate the type of each variable.\nInclude the code and resulting output used to support your answer.\n\n\nNow is a good time to render, commit, and push.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-4",
+    "href": "hw/hw-1.html#exercise-4",
+    "title": "HW 1 - Data visualization",
+    "section": "Exercise 4",
+    "text": "Exercise 4\nDo people who smoke more tend to have worse health conditions?\n\nUse a segmented bar chart to visualize the relationship between smoking (smoke_freq) and general health (general_health). Decide on which variable to represent with bars and which variable to fill the color of the bars by.\nPay attention to the order of the bars and, if need be, use the fct_relevel function to reorder the levels of the variables.\n\nBelow is sample code for releveling general_health. Here we first convert general_health to a factor (how R stores categorical data) and then order the levels from Excellent to Poor.\n\n\n\nbrfss |&gt;\n  mutate(\n    general_health = as.factor(general_health),\n    general_health = fct_relevel(general_health, \"Excellent\", \"Very good\", \"Good\", \"Fair\", \"Poor\")\n  )\n\n\nInclude informative title, axis, and legend labels.\nComment on the motivating question based on evidence from the visualization: Do people who smoke more tend to have worse health conditions?\n\n\nNow is a good time to render, commit, and push.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-5",
+    "href": "hw/hw-1.html#exercise-5",
+    "title": "HW 1 - Data visualization",
+    "section": "Exercise 5",
+    "text": "Exercise 5\nHow are sleep and general health associated?\n\nCreate a visualization displaying the relationship between sleep and general_health.\nInclude informative title and axis labels.\nModify your plot to use a different theme than the default.\nComment on the motivating question based on evidence from the visualization: How are sleep and general health associated?\n\n\nNow is a good time to render, commit, and push.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#exercise-6",
+    "href": "hw/hw-1.html#exercise-6",
+    "title": "HW 1 - Data visualization",
+    "section": "Exercise 6",
+    "text": "Exercise 6\n\nFill in the blanks:\n\nThe gg in the name of the package ggplot2 stands for ___.\nIf you map the same continuous variable to both x and y aesthetics in a scatterplot, you get a straight ___ line. (Choose between “vertical”, “horizontal”, or “diagonal”.)\n\nCode style: Fix up the code style by spaces and line breaks where needed. Briefly describe your fixes. (Hint: You can refer to the Tidyverse style guide.)\n\n\nggplot(data=mpg,mapping=aes(x=drv,fill=class))+geom_bar() +scale_fill_viridis_d()\n\n\nRead ?facet_wrap. What does nrow do? What does ncol do? What other options control the layout of the individual panels? Why doesn’t facet_grid() have nrow and ncol arguments?\n\n\nRender, commit, and push one last time.\nMake sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "labs/lab-1.html",
+    "href": "labs/lab-1.html",
+    "title": "Lab 1 - Trip to the midwest",
+    "section": "",
+    "text": "Important\n\n\n\nThis lab is due [some date in the future].",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/lab-1.html#packages",
+    "href": "labs/lab-1.html#packages",
+    "title": "Lab 1 - Trip to the midwest",
+    "section": "Packages",
+    "text": "Packages\nWe will use the tidyverse package to create and customize plots in R.\n\nlibrary(tidyverse)",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "labs/lab-1.html#data-lets-take-a-trip-to-the-midwest",
+    "href": "labs/lab-1.html#data-lets-take-a-trip-to-the-midwest",
+    "title": "Lab 1 - Trip to the midwest",
+    "section": "Data: Let’s take a trip to the Midwest",
+    "text": "Data: Let’s take a trip to the Midwest\nThe data in this lab is in the midwest data frame. It is part of the ggplot2 R package, so the midwest data set is automatically loaded when you load the tidyverse package.\nThe data contains demographic characteristics of counties in the Midwest region of the United States.\nBecause the data set is part of the ggplot2 package, you can read documentation for the data set, including variable definitions by typing ?midwest in the console.",
+    "crumbs": [
+      "Labs",
+      "Lab 1"
+    ]
+  },
+  {
+    "objectID": "project/project.html",
+    "href": "project/project.html",
+    "title": "Project",
+    "section": "",
+    "text": "Add project details here.",
+    "crumbs": [
+      "Project",
+      "Project"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Data Sci 101",
+    "section": "",
+    "text": "This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.\n\n\n\n\n\n\n\n\nWEEK\nDATE\nTOPIC\nPREPARE\nMATERIALS\nDUE\n\n\n\n\n1\nMon, Aug 28\n\nWelcome to Data Sci 101!\n\n\n📖 R4DS: Chp 1\n📖 R4DS: Chp 2\n\n\n🖥️ slides\n⌨️ ae-01\n\n\n\n\n\n\n\nWed, Aug 30\n\nGrammar of graphics\n\n\n📖 R4DS: Chp 3\n\n\n🖥️ slides\n⌨️ ae-02\n\n\n\n\n\n\n\nFri, Sep 1\n\nLab 1: Hello R!\n\n\n📖 R4DS: Chp 4\n\n\n⌨️ lab-1\n\n\n\n\n\n2\nMon, Sep 4\n\nVisualizing various types of data\n\n\n📖 R4DS: Chp 5.1 - 5.4\n\n\n\n\n\n\n\n\n\nWed, Sep 6\n\nGrammar of data wrangling\n\n\n📖 R4DS: Chp 5.5 - 5.7\n\n\n\n\n📝 HW 1 due at 5 pm\n\n\n\n\n\nFri, Sep 8\n\nLab 2: Data wrangling\n\n\n📖 R4DS: Chp 7\n\n\n\n\n⌨️ Lab 1 due at 5 pm\n\n\n\n\n\n\n\n\nAdd more weeks below…",
+    "crumbs": [
+      "Course information",
+      "Schedule"
+    ]
+  },
+  {
+    "objectID": "project/project-tips-resources.html",
+    "href": "project/project-tips-resources.html",
+    "title": "Project tips + resources",
+    "section": "",
+    "text": "Add project tips and resources here.",
+    "crumbs": [
+      "Project",
+      "Tips + resources"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html",
+    "href": "labs/lab-2.html",
+    "title": "Lab 1 - Trip to the midwest",
+    "section": "",
+    "text": "Important\n\n\n\nThis lab is due [some date in the future].",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#packages",
+    "href": "labs/lab-2.html#packages",
+    "title": "Lab 1 - Trip to the midwest",
+    "section": "Packages",
+    "text": "Packages\nWe will use the tidyverse package to create and customize plots in R.\n\nlibrary(tidyverse)",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "labs/lab-2.html#data-lets-take-a-trip-to-the-midwest",
+    "href": "labs/lab-2.html#data-lets-take-a-trip-to-the-midwest",
+    "title": "Lab 1 - Trip to the midwest",
+    "section": "Data: Let’s take a trip to the Midwest",
+    "text": "Data: Let’s take a trip to the Midwest\nThe data in this lab is in the midwest data frame. It is part of the ggplot2 R package, so the midwest data set is automatically loaded when you load the tidyverse package.\nThe data contains demographic characteristics of counties in the Midwest region of the United States.\nBecause the data set is part of the ggplot2 package, you can read documentation for the data set, including variable definitions by typing ?midwest in the console.",
+    "crumbs": [
+      "Labs",
+      "Lab 2"
+    ]
+  },
+  {
+    "objectID": "hw/hw-2.html",
+    "href": "hw/hw-2.html",
+    "title": "HW 2 - Data wrangling",
+    "section": "",
+    "text": "Add HW 2 details here.",
+    "crumbs": [
+      "HW",
+      "HW 2"
+    ]
+  },
+  {
+    "objectID": "slides/01/01-welcome.html#slide-1",
+    "href": "slides/01/01-welcome.html#slide-1",
+    "title": "Welcome to Data Sci 101",
+    "section": "Slide 1",
+    "text": "Slide 1\nSome course details"
+  },
+  {
+    "objectID": "slides/01/01-welcome.html#slide-2",
+    "href": "slides/01/01-welcome.html#slide-2",
+    "title": "Welcome to Data Sci 101",
+    "section": "Slide 2",
+    "text": "Slide 2\nSome more course details"
+  },
+  {
+    "objectID": "slides/01/01-welcome.html#applications-exercise-un-votes",
+    "href": "slides/01/01-welcome.html#applications-exercise-un-votes",
+    "title": "Welcome to Data Sci 101",
+    "section": "Applications exercise: UN Votes",
+    "text": "Applications exercise: UN Votes\n\nGo to Posit Cloud and start the project called UN Votes. Render the document titled unvotes.qmd. Review the narrative and the data visualization you just created. Then, change “Turkey” to another country of your choice. Re-render the document. Show the plot you created to your neighbor and discuss (1) why you chose that country and (2) how this new visualization is different than the original (and what that says about country politics, if anything).\n\n\n\n\n🔗 data-sci-101.github.io"
+  }
+]
