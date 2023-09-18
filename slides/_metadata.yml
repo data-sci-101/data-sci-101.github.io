@@ -1,7 +1,7 @@
 institute: "Data Sci 101"
 author: "Dr. Mine Çetinkaya-Rundel"
 footer: "[🔗 data-sci-101.github.io](https://data-sci-101.github.io/)"
-logo: "../logo.png"
+logo: "../images/logo.png"
 format:
   revealjs:
     theme: slides.scss

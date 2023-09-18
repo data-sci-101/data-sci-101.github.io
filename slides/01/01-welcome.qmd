@@ -2,7 +2,6 @@
 title: Welcome to Data Sci 101
 subtitle: Lecture 1
 format: revealjs
-auto-stretch: false
 ---
 
 # Course Details
