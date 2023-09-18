@@ -1,0 +1,10 @@
+---
+title: "Syllabus"
+format: 
+  html: default
+  pdf: default
+---
+
+Your syllabus goes here. For a sample syllabus, see <https://sta199-f22-1.github.io/course-syllabus.html>.
+
+Note that you can download a PDF of the syllabus on the right.

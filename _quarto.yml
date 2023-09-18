@@ -1,0 +1,77 @@
+project:
+  type: website
+
+website:
+  page-navigation: true
+  title: "Data Sci 101"
+  description: "Homepage for Data Sci 101 - A demo course for Teaching Data Science Masterclass."
+  site-url: "https://data-sci-101.github.io"
+
+  repo-url: https://github.com/data-sci-101/data-sci-101.github.io
+  repo-actions: [edit, issue]
+
+  open-graph: true
+
+  sidebar:
+    background: "#548c90"
+    logo: "images/logo.png"
+    pinned: true
+    align: center
+
+    tools:
+      - icon: cloud
+        href: https://posit.cloud/spaces/397257
+        text: "Posit Cloud"
+      - icon: github
+        href: https://github.com/data-sci-101
+        text: "GitHub"
+
+    style: docked
+    search: true
+    collapse-level: 1
+
+    contents:
+      - section: "Course information"
+        contents:
+          - href: course-syllabus.qmd
+            text: Syllabus
+          - href: index.qmd
+            text: Schedule
+      - section: "HW"
+        contents:
+          - href: hw/hw-1.qmd
+            text: HW 1
+          - href: hw/hw-2.qmd
+            text: HW 2
+      - section: "Labs"
+        contents:
+          - href: labs/lab-1.qmd
+            text: Lab 1
+          - href: labs/lab-2.qmd
+            text: Lab 2         
+      - section: "Project"
+        contents:
+          - href: project/project.qmd
+          - href: project/project-tips-resources.qmd
+            text: Tips + resources
+
+  page-footer:
+    right: "This page is built with 🤍 and [Quarto](https://quarto.org/)."
+    left: "&copy; Copyright 2023, Mine Çetinkaya-Rundel"
+    background: "#548c90"
+
+format:
+  html:
+    theme:
+      light: [cosmo, style/sta101.scss]
+      dark: [cosmo, style/sta101.scss, style/dark.scss]
+    linkcolor: "#2e5189"
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    mainfont: "Atkinson Hyperlegible"
+
+execute:
+  freeze: auto
+
+editor: visual
