@@ -10,9 +10,105 @@ This homework is due *\[some date in the future\]*.
 
 # Getting Started
 
--   Go to the [data-sci-101](https://github.com/data-sci-101) organization on GitHub. Click on the repo with the prefix `hw-1`. It contains the starter documents you need to complete the homework assignment.
+-   Go to the [data-sci-101](https://github.com/data-sci-101) organization on GitHub.
+    Click on the repo with the prefix `hw-1`.
+    It contains the starter documents you need to complete the homework assignment.
 
--   Go to Posit Cloud and click on New Project \> New RStudio Project from Git. Make sure you've connected your Posit Cloud and GitHub accounts.
+-   Go to Posit Cloud and click on New Project \> New RStudio Project from Git.
+    Make sure you've connected your Posit Cloud and GitHub accounts.
+
+## Hello GitHub
+
+-   Once you're in the project, go to the Console and run
+
+    ```{r}
+    #| eval: false
+
+    usethis::create_github_token()
+    ```
+
+-   On the page that pops open in your browser, create a new GitHub Personal Access Token (i.e., sort of like a password you store):
+
+    -   Describe the token's use case under *Note*, e.g., `hw-1`
+
+    -   Extend expiration date to 90 days
+
+    -   Scroll down and click on **Generate Token**
+
+-   Copy the token by clicking on .
+
+-   Go back to Posit Cloud, to your Console, and run
+
+    ```{r}
+    #| eval: false
+        
+    gitcreds::gitcreds_set()
+    ```
+
+    and paste the token you just copied.
+
+## Hello Git
+
+Introduce yourself to Git with
+
+```{r}
+#| eval: false
+
+usethis::use_git_config(
+  user.name = "Mine Çetinkaya-Rundel",
+  user.email = "cetinkaya.mine@gmail.com"
+)
+```
+
+replacing your name and email (that you used to create your GitHub account) with mine.
+
+## YAML
+
+The top portion of your R Markdown file (between the three dashed lines) is called **YAML**.
+It stands for "YAML Ain't Markup Language".
+It is a human friendly data serialization standard for all programming languages.
+All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.
+
+::: callout-important
+## Important
+
+Open the Quarto (`.qmd`) file in your project, change the author name to your name, and render the document.
+Examine the rendered document.
+:::
+
+## Committing changes
+
+Now, go to the Git pane in your RStudio instance.
+This will be in the top right hand corner in a separate tab.
+
+If you have made changes to your Quarto (.qmd) file, you should see it listed here.
+Click on it to select it in this list and then click on **Diff**.
+This shows you the *diff*erence between the last committed state of the document and its current state including changes.
+You should see deletions in red and additions in green.
+
+If you're happy with these changes, we'll prepare the changes to be pushed to your remote repository.
+First, **stage** your changes by checking the appropriate box on the files you want to prepare.
+Next, write a meaningful commit message (for instance, "updated author name") in the **Commit message** box.
+Finally, click **Commit**.
+Note that every commit needs to have a commit message associated with it.
+
+You don't have to commit after every change, as this would get quite tedious.
+You should commit states that are *meaningful to you* for inspection, comparison, or restoration.
+
+In the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use.
+As the semester progresses we will let you make these decisions.
+
+Now let's make sure all the changes went to GitHub.
+Go to your GitHub repo and refresh the page.
+You should see your commit message next to the updated files.
+If you see this, all your changes are on GitHub and you're good to go!
+
+## Push changes
+
+Now that you have made an update and committed this change, it's time to push these changes to your repo on GitHub.
+
+In order to push your changes to GitHub, you must have **staged** your **commit** to be pushed.
+click on **Push**.
 
 ## Packages
 
@@ -28,10 +124,14 @@ library(openintro)
 
 As we've discussed in lecture, your plots should include an informative title, axes should be labeled, and careful consideration should be given to aesthetic choices.
 
-Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete this homework and other assignments in this course. There will be periodic reminders in this assignment to remind you to knit, commit, and push your changes to GithHub. You should have **at least 3 commits with meaningful commit messages** by the end of the assignment.
+Remember that continuing to develop a sound workflow for reproducible data analysis is important as you complete this homework and other assignments in this course.
+There will be periodic reminders in this assignment to remind you to knit, commit, and push your changes to GithHub.
+You should have **at least 3 commits with meaningful commit messages** by the end of the assignment.
 
 ::: callout-note
-Note: Do not let R output answer the question for you unless the question specifically asks for just a plot. For example, if the question asks for the number of columns in the data set, please type out the number of columns. You are subject to lose points if you do not.
+Note: Do not let R output answer the question for you unless the question specifically asks for just a plot.
+For example, if the question asks for the number of columns in the data set, please type out the number of columns.
+You are subject to lose points if you do not.
 :::
 
 ## Workflow + formatting
@@ -53,11 +153,14 @@ Make sure to
 Use this dataset for Exercises 1 and 2.
 :::
 
-For the following two exercises you will work with data on houses that were sold in the Duke Forest neighborhood of Durham, NC in November 2020. The `duke_forest` dataset comes from the **openintro** package. You can see a list of the variables on the [package website](https://openintrostat.github.io/openintro/reference/duke_forest.html) or by running `?duke_forest` in your console.
+For the following two exercises you will work with data on houses that were sold in the Duke Forest neighborhood of Durham, NC in November 2020.
+The `duke_forest` dataset comes from the **openintro** package.
+You can see a list of the variables on the [package website](https://openintrostat.github.io/openintro/reference/duke_forest.html) or by running `?duke_forest` in your console.
 
 ## Exercise 1
 
-Suppose you're helping some family friends who are looking to buy a house in Duke Forest. As they browse Zillow listings, they realize some houses have garages and others don't, and they wonder: **Does having a garage make a difference?**
+Suppose you're helping some family friends who are looking to buy a house in Duke Forest.
+As they browse Zillow listings, they realize some houses have garages and others don't, and they wonder: **Does having a garage make a difference?**
 
 Luckily, you can help them answer this question with data visualization!
 
@@ -78,12 +181,16 @@ duke_forest |>
 -   Finally, include a brief (2-3 sentence) narrative comparing the distributions of prices of Duke Forest houses that do and don't have garages. Your narrative should touch on whether having a garage "makes a difference" in terms of the price of the house.
 
 ::: render-commit-push
-Now is a good time to render, commit, and push. Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+Now is a good time to render, commit, and push.
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
 :::
 
 ## Exercise 2
 
-It's expected that within any given marker larger houses will be priced higher. It's also expected that the age of the house will have an effect on the price. However in some markets new houses might be more expensive while in others new construction might mean "no character" and hence be less expensive. So your family friends ask: "In Duke Forest, do houses that are bigger and more expensive tend to be newer ones than those that are smaller and cheaper?"
+It's expected that within any given marker larger houses will be priced higher.
+It's also expected that the age of the house will have an effect on the price.
+However in some markets new houses might be more expensive while in others new construction might mean "no character" and hence be less expensive.
+So your family friends ask: "In Duke Forest, do houses that are bigger and more expensive tend to be newer ones than those that are smaller and cheaper?"
 
 Once again, data visualization skills to the rescue!
 
@@ -98,7 +205,8 @@ Once again, data visualization skills to the rescue!
 ::: render-commit-push
 Now is a good time to render, commit, and push.
 
-Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding. <br>
+Make sure that you commit and push all changed documents and your Git pane is completely empty before proceeding.
+<br>
 :::
 
 ## Data 2: BRFSS
@@ -107,11 +215,16 @@ Make sure that you commit and push all changed documents and your Git pane is co
 Use this dataset for Exercises 3 to 5.
 :::
 
-> The Behavioral Risk Factor Surveillance System (BRFSS) is the nation's premier system of health-related telephone surveys that collect state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services. Established in 1984 with 15 states, BRFSS now collects data in all 50 states as well as the District of Columbia and three U.S. territories. BRFSS completes more than 400,000 adult interviews each year, making it the largest continuously conducted health survey system in the world.
+> The Behavioral Risk Factor Surveillance System (BRFSS) is the nation's premier system of health-related telephone surveys that collect state data about U.S. residents regarding their health-related risk behaviors, chronic health conditions, and use of preventive services.
+> Established in 1984 with 15 states, BRFSS now collects data in all 50 states as well as the District of Columbia and three U.S. territories.
+> BRFSS completes more than 400,000 adult interviews each year, making it the largest continuously conducted health survey system in the world.
 >
 > Source: [cdc.gov/brfss](https://www.cdc.gov/brfss/)
 
-In the following exercises we will work with data from the 2020 BRFSS survey. The originally come from [here](https://michaelminn.net/tutorials/r-brfss/), though we will work with a random sample of responses and a small number of variables from the data provided. These have already been sampled for you and the dataset you'll use can be found in the `data` folder of your repo. It's called `brfss.csv`.
+In the following exercises we will work with data from the 2020 BRFSS survey.
+The originally come from [here](https://michaelminn.net/tutorials/r-brfss/), though we will work with a random sample of responses and a small number of variables from the data provided.
+These have already been sampled for you and the dataset you'll use can be found in the `data` folder of your repo.
+It's called `brfss.csv`.
 
 ```{r load-data}
 #| message: false
