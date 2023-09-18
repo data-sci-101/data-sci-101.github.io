@@ -2,42 +2,50 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://data-sci-101.github.io/course-syllabus.html</loc>
-    <lastmod>2023-09-18T07:09:12.869Z</lastmod>
+    <lastmod>2023-09-18T07:54:20.860Z</lastmod>
   </url>
   <url>
     <loc>https://data-sci-101.github.io/slides/02/02-gg.html</loc>
-    <lastmod>2023-09-18T07:09:12.869Z</lastmod>
+    <lastmod>2023-09-18T07:54:20.860Z</lastmod>
   </url>
   <url>
     <loc>https://data-sci-101.github.io/hw/hw-1.html</loc>
-    <lastmod>2023-09-18T07:09:12.869Z</lastmod>
+    <lastmod>2023-09-18T07:54:20.860Z</lastmod>
   </url>
   <url>
     <loc>https://data-sci-101.github.io/labs/lab-1.html</loc>
-    <lastmod>2023-09-18T07:09:12.869Z</lastmod>
+    <lastmod>2023-09-18T07:54:20.860Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-sci-101.github.io/ae/ae-1-unvotes.html</loc>
+    <lastmod>2023-09-18T07:54:20.860Z</lastmod>
   </url>
   <url>
     <loc>https://data-sci-101.github.io/project/project.html</loc>
-    <lastmod>2023-09-18T07:09:12.869Z</lastmod>
+    <lastmod>2023-09-18T07:54:20.860Z</lastmod>
   </url>
   <url>
     <loc>https://data-sci-101.github.io/index.html</loc>
-    <lastmod>2023-09-18T07:09:12.869Z</lastmod>
+    <lastmod>2023-09-18T07:54:20.860Z</lastmod>
   </url>
   <url>
     <loc>https://data-sci-101.github.io/project/project-tips-resources.html</loc>
-    <lastmod>2023-09-18T07:09:12.869Z</lastmod>
+    <lastmod>2023-09-18T07:54:20.860Z</lastmod>
+  </url>
+  <url>
+    <loc>https://data-sci-101.github.io/ae/ae-2-fisheries.html</loc>
+    <lastmod>2023-09-18T07:54:20.860Z</lastmod>
   </url>
   <url>
     <loc>https://data-sci-101.github.io/labs/lab-2.html</loc>
-    <lastmod>2023-09-18T07:09:12.869Z</lastmod>
+    <lastmod>2023-09-18T07:54:20.860Z</lastmod>
   </url>
   <url>
     <loc>https://data-sci-101.github.io/hw/hw-2.html</loc>
-    <lastmod>2023-09-18T07:09:12.869Z</lastmod>
+    <lastmod>2023-09-18T07:54:20.860Z</lastmod>
   </url>
   <url>
     <loc>https://data-sci-101.github.io/slides/01/01-welcome.html</loc>
-    <lastmod>2023-09-18T07:09:12.869Z</lastmod>
+    <lastmod>2023-09-18T07:54:20.860Z</lastmod>
   </url>
 </urlset>

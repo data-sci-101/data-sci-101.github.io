@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Data Sci 101</title>
+<title>Data Sci 101 - Ex 1.2: Fisheries of the world</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./hw/hw-1.html" rel="next">
-<link href="./course-syllabus.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -70,7 +102,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<meta property="og:title" content="Data Sci 101">
+<meta property="og:title" content="Data Sci 101 - Ex 1.2: Fisheries of the world">
 <meta property="og:description" content="Homepage for Data Sci 101 - A demo course for Teaching Data Science Masterclass.">
 <meta property="og:site_name" content="Data Sci 101">
 </head>
@@ -84,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-syllabus.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">Ex 1.2: Fisheries of the world</li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -98,8 +130,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
-      <a href="./index.html" class="sidebar-logo-link">
-      <img src="./images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      <a href="../index.html" class="sidebar-logo-link">
+      <img src="../images/logo.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
       <div class="sidebar-tools-main tools-wide">
     <a href="https://posit.cloud/spaces/397257" title="Posit Cloud" class="quarto-navigation-tool px-1" aria-label="Posit Cloud"><i class="bi bi-cloud"></i></a>
@@ -116,22 +148,22 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-syllabus.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-syllabus.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
@@ -148,13 +180,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hw/hw-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../hw/hw-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./hw/hw-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../hw/hw-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">HW 2</span></a>
   </div>
 </li>
@@ -171,13 +203,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/lab-1.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/lab-1.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 1</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./labs/lab-2.html" class="sidebar-item-text sidebar-link">
+  <a href="../labs/lab-2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Lab 2</span></a>
   </div>
 </li>
@@ -194,13 +226,13 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project/project.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/project.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Project</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./project/project-tips-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../project/project-tips-resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Tips + resources</span></a>
   </div>
 </li>
@@ -212,14 +244,35 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a>
+  <ul class="collapse">
+  <li><a href="#exercise-1" id="toc-exercise-1" class="nav-link" data-scroll-target="#exercise-1">Exercise 1</a></li>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
+  <li><a href="#data-prep" id="toc-data-prep" class="nav-link" data-scroll-target="#data-prep">Data prep</a></li>
+  </ul></li>
+  <li><a href="#data-joins" id="toc-data-joins" class="nav-link" data-scroll-target="#data-joins">Data joins</a>
+  <ul class="collapse">
+  <li><a href="#exercise-2" id="toc-exercise-2" class="nav-link" data-scroll-target="#exercise-2">Exercise 2</a></li>
+  <li><a href="#exercise-3" id="toc-exercise-3" class="nav-link" data-scroll-target="#exercise-3">Exercise 3</a></li>
+  <li><a href="#exercise-4" id="toc-exercise-4" class="nav-link" data-scroll-target="#exercise-4">Exercise 4</a></li>
+  <li><a href="#exercise-5" id="toc-exercise-5" class="nav-link" data-scroll-target="#exercise-5">Exercise 5</a></li>
+  <li><a href="#exercise-6" id="toc-exercise-6" class="nav-link" data-scroll-target="#exercise-6">Exercise 6</a></li>
+  <li><a href="#exercise-7" id="toc-exercise-7" class="nav-link" data-scroll-target="#exercise-7">Exercise 7</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/data-sci-101/data-sci-101.github.io/edit/main/ae/ae-2-fisheries.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/data-sci-101/data-sci-101.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-syllabus.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Sci 101</h1>
+<h1 class="title">Ex 1.2: Fisheries of the world</h1>
 </div>
 
 
@@ -235,581 +288,140 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>This page contains an outline of the topics, content, and assignments for the semester. Note that this schedule will be updated as the semester progresses and the timeline of topics and assignments might be updated throughout the semester.</p>
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>Fisheries and Aquaculture Department of the Food and Agriculture Organization of the United Nations collects data on fisheries production of countries. The (not-so-great) visualization below shows the distribution of fishery harvest of countries for 2016, by capture and aquaculture.</p>
+<div id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div>
+<img src="images/fisheries-ugly-charts.png" id="fig-539a35d47e664c97a50115a146a7f1bd-1" class="img-fluid quarto-figure-center figure-img">
+</div>
+</figure>
+</div>
+<ul>
+<li>Countries whose total harvest was less than 100,000 tons are not included in the visualization.</li>
+<li>Source: <a href="https://en.wikipedia.org/wiki/Fishing_industry_by_country">Fishing industry by country</a></li>
+</ul>
+<section id="exercise-1" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-1">Exercise 1</h2>
+<p>What are some ways you would improve the visualization above?</p>
+<blockquote class="blockquote">
+<p>Add your response here.</p>
+</blockquote>
+</section>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
+<p>We will use the <strong>tidyverse</strong> and <strong>scales</strong> packages for data wrangling and visualization.</p>
 <div class="cell">
-<div class="cell-output-display">
-<div id="gopgtodhro" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#gopgtodhro table {
-  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">Data</h2>
+<p>Let’s load the data:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>fisheries <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/fisheries.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 216 Columns: 4
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (1): country
+dbl (3): capture, aquaculture, total
 
-#gopgtodhro thead, #gopgtodhro tbody, #gopgtodhro tfoot, #gopgtodhro tr, #gopgtodhro td, #gopgtodhro th {
-  border-style: none;
-}
-
-#gopgtodhro p {
-  margin: 0;
-  padding: 0;
-}
-
-#gopgtodhro .gt_table {
-  display: table;
-  border-collapse: collapse;
-  line-height: normal;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 13px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#gopgtodhro .gt_caption {
-  padding-top: 4px;
-  padding-bottom: 4px;
-}
-
-#gopgtodhro .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#gopgtodhro .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 3px;
-  padding-bottom: 5px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#gopgtodhro .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#gopgtodhro .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#gopgtodhro .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#gopgtodhro .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#gopgtodhro .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#gopgtodhro .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#gopgtodhro .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#gopgtodhro .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#gopgtodhro .gt_spanner_row {
-  border-bottom-style: hidden;
-}
-
-#gopgtodhro .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  text-align: left;
-}
-
-#gopgtodhro .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#gopgtodhro .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#gopgtodhro .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#gopgtodhro .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#gopgtodhro .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gopgtodhro .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#gopgtodhro .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#gopgtodhro .gt_row_group_first th {
-  border-top-width: 2px;
-}
-
-#gopgtodhro .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gopgtodhro .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#gopgtodhro .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#gopgtodhro .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#gopgtodhro .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gopgtodhro .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#gopgtodhro .gt_last_grand_summary_row_top {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: double;
-  border-bottom-width: 6px;
-  border-bottom-color: #D3D3D3;
-}
-
-#gopgtodhro .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#gopgtodhro .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#gopgtodhro .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#gopgtodhro .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gopgtodhro .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#gopgtodhro .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#gopgtodhro .gt_left {
-  text-align: left;
-}
-
-#gopgtodhro .gt_center {
-  text-align: center;
-}
-
-#gopgtodhro .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#gopgtodhro .gt_font_normal {
-  font-weight: normal;
-}
-
-#gopgtodhro .gt_font_bold {
-  font-weight: bold;
-}
-
-#gopgtodhro .gt_font_italic {
-  font-style: italic;
-}
-
-#gopgtodhro .gt_super {
-  font-size: 65%;
-}
-
-#gopgtodhro .gt_footnote_marks {
-  font-size: 75%;
-  vertical-align: 0.4em;
-  position: initial;
-}
-
-#gopgtodhro .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#gopgtodhro .gt_indent_1 {
-  text-indent: 5px;
-}
-
-#gopgtodhro .gt_indent_2 {
-  text-indent: 10px;
-}
-
-#gopgtodhro .gt_indent_3 {
-  text-indent: 15px;
-}
-
-#gopgtodhro .gt_indent_4 {
-  text-indent: 20px;
-}
-
-#gopgtodhro .gt_indent_5 {
-  text-indent: 25px;
-}
-</style>
-
-<table class="gt_table table table-sm table-striped small" data-quarto-postprocess="true" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
-<thead>
-<tr class="header gt_col_headings">
-<th id="<strong>WEEK</strong>" class="gt_col_heading gt_columns_bottom_border gt_center" data-quarto-table-cell-role="th" scope="col"><strong>WEEK</strong></th>
-<th id="<strong>DATE</strong>" class="gt_col_heading gt_columns_bottom_border gt_right" data-quarto-table-cell-role="th" scope="col"><strong>DATE</strong></th>
-<th id="<strong>TOPIC</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>TOPIC</strong></th>
-<th id="<strong>PREPARE</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>PREPARE</strong></th>
-<th id="<strong>MATERIALS</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>MATERIALS</strong></th>
-<th id="<strong>DUE</strong>" class="gt_col_heading gt_columns_bottom_border gt_left" data-quarto-table-cell-role="th" scope="col"><strong>DUE</strong></th>
-</tr>
-</thead>
-<tbody class="gt_table_body">
-<tr class="odd">
-<td class="gt_row gt_center" headers="week">1</td>
-<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Aug 28</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>Welcome to Data Sci 101!</p>
-</div></td>
-<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>📖 <a href="https://r4ds.had.co.nz/introduction.html">R4DS: Chp 1</a><br>
-📖 <a href="https://r4ds.had.co.nz/explore-intro.html">R4DS: Chp 2</a></p>
-</div></td>
-<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>🖥️ <a href="https://data-sci-101.github.io/slides/01/01-welcome.html">slides</a><br>
-⌨️ <a href="https://data-sci-101.github.io/ae/ae-01-unvotes.html">ae-01</a></p>
-</div></td>
-<td class="gt_row gt_left" headers="due"><br>
-</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center gt_striped" headers="week"><br>
-</td>
-<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Aug 30</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>Grammar of graphics</p>
-</div></td>
-<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>📖 <a href="https://r4ds.had.co.nz/data-visualisation.html">R4DS: Chp 3</a></p>
-</div></td>
-<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>🖥️ <a href="https://data-sci-101.github.io/slides/02/02-gg.html">slides</a><br>
-⌨️ <a href="https://data-sci-101.github.io/ae/ae-02-fisheries.html">ae-02</a></p>
-</div></td>
-<td class="gt_row gt_left gt_striped" headers="due"><br>
-</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="week"><br>
-</td>
-<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Sep 1</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>Lab 1: Hello R!</p>
-</div></td>
-<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>📖 <a href="https://r4ds.had.co.nz/workflow-basics.html">R4DS: Chp 4</a></p>
-</div></td>
-<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>⌨️ <a href="https://data-sci-101.github.io/labs/lab-1.html">lab-1</a></p>
-</div></td>
-<td class="gt_row gt_left" headers="due"><br>
-</td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center gt_striped" headers="week">2</td>
-<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Mon, Sep 4</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>Visualizing various types of data</p>
-</div></td>
-<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>📖 <a href="https://r4ds.had.co.nz/transform.html">R4DS: Chp 5.1 - 5.4</a></p>
-</div></td>
-<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
-</td>
-<td class="gt_row gt_left gt_striped" headers="due"><br>
-</td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="week"><br>
-</td>
-<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Wed, Sep 6</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>Grammar of data wrangling</p>
-</div></td>
-<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>📖 <a href="https://r4ds.had.co.nz/transform.html">R4DS: Chp 5.5 - 5.7</a></p>
-</div></td>
-<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
-</td>
-<td class="gt_row gt_left" headers="due"><div class="gt_from_md">
-<p>📝 <a href="https://data-sci-101.github.io/hw/hw-1.html">HW 1</a> due at 5 pm</p>
-</div></td>
-</tr>
-<tr class="even">
-<td class="gt_row gt_center gt_striped" headers="week"><br>
-</td>
-<td class="gt_row gt_right gt_striped" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3">Fri, Sep 8</td>
-<td class="gt_row gt_left gt_striped" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>Lab 2: Data wrangling</p>
-</div></td>
-<td class="gt_row gt_left gt_striped" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p>📖 <a href="https://r4ds.had.co.nz/exploratory-data-analysis.html">R4DS: Chp 7</a></p>
-</div></td>
-<td class="gt_row gt_left gt_striped" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
-</td>
-<td class="gt_row gt_left gt_striped" headers="due"><div class="gt_from_md">
-<p>⌨️ <a href="https://data-sci-101.github.io/labs/lab-1.html">Lab 1</a> due at 5 pm</p>
-</div></td>
-</tr>
-<tr class="odd">
-<td class="gt_row gt_center" headers="week"><br>
-</td>
-<td class="gt_row gt_right" headers="date" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
-</td>
-<td class="gt_row gt_left" headers="topic" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><div class="gt_from_md">
-<p><em>Add more weeks below…</em></p>
-</div></td>
-<td class="gt_row gt_left" headers="prepare" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
-</td>
-<td class="gt_row gt_left" headers="materials" style="border-right-width: 1px; border-right-style: solid; border-right-color: #D3D3D3"><br>
-</td>
-<td class="gt_row gt_left" headers="due"><br>
-</td>
-</tr>
-</tbody>
-</table>
-
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
 </div>
 </div>
+<p>And inspect it:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(fisheries)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 216
+Columns: 4
+$ country     &lt;chr&gt; "Afghanistan", "Albania", "Algeria", "American Samoa", "An…
+$ capture     &lt;dbl&gt; 1000, 7886, 95000, 3047, 0, 486490, 3000, 755226, 3758, 14…
+$ aquaculture &lt;dbl&gt; 1200, 950, 1361, 20, 0, 655, 10, 3673, 16381, 0, 96847, 34…
+$ total       &lt;dbl&gt; 2200, 8836, 96361, 3067, 0, 487145, 3010, 758899, 20139, 1…</code></pre>
+</div>
+</div>
+</section>
+<section id="data-prep" class="level2">
+<h2 class="anchored" data-anchor-id="data-prep">Data prep</h2>
+<p>Filter out countries whose total harvest was less than 100,000 tons since they are not included in the visualization:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fisheries <span class="ot">&lt;-</span> fisheries <span class="sc">|&gt;</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(total <span class="sc">&gt;</span> <span class="dv">100000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Then, we will join this with the continent data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>continents <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/continents.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Rows: 245 Columns: 2
+── Column specification ────────────────────────────────────────────────────────
+Delimiter: ","
+chr (2): country, continent
+
+ℹ Use `spec()` to retrieve the full column specification for this data.
+ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="data-joins" class="level1">
+<h1>Data joins</h1>
+<section id="exercise-2" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-2">Exercise 2</h2>
+<p>We want to keep all rows and columns from <code>fisheries</code> and add a column for corresponding continents. Which join function should we use? Explain your reasoning.</p>
+<blockquote class="blockquote">
+<p>Add your response here.</p>
+</blockquote>
+</section>
+<section id="exercise-3" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-3">Exercise 3</h2>
+<p>Join the two data frames with <code>fisheries &lt;- *_join(fisheries, continents)</code> using the join function you decided on in the previous question. How does this function know to join the two data frames by <code>country</code>?</p>
+<p>Hint: Take a look at the variables in the two datasets you’re joining.</p>
+<blockquote class="blockquote">
+<p>Add response here.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-4" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-4">Exercise 4</h2>
+<p>Do all countries in <code>fisheries</code> have a <code>continent</code> assigned? If not, which countries are missing <code>continent</code>s (<code>NA</code>s)?</p>
+<blockquote class="blockquote">
+<p>Add your response here</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-5" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-5">Exercise 5</h2>
+<p>Fill in the missing continents for these countries and justify your decisions. Then check to make sure all countries now have continents assigned.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-6" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-6">Exercise 6</h2>
+<p>Calculate the percentage of aquaculture harvest for each country, record these values in a new variable called <code>aquaculture_perc</code>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exercise-7" class="level2">
+<h2 class="anchored" data-anchor-id="exercise-7">Exercise 7</h2>
+<p>Calculate minimum, mean, and maximum aquaculture percentage for each continent and visualize these values as a bar plot.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add code here</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1300,18 +912,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./course-syllabus.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Syllabus</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./hw/hw-1.html" class="pagination-link">
-        <span class="nav-page-text">HW 1</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -1320,7 +920,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/data-sci-101/data-sci-101.github.io/edit/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li><li><a href="https://github.com/data-sci-101/data-sci-101.github.io/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    </div>
     <div class="nav-footer-right">
 <p>This page is built with 🤍 and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
