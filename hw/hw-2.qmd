@@ -1,0 +1,7 @@
+---
+title: "HW 2 - Data wrangling"
+categories: "Homework"
+editor: visual
+---
+
+Add HW 2 details here.

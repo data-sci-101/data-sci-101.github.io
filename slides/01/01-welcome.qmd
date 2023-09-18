@@ -1,0 +1,29 @@
+---
+title: Welcome to Data Sci 101
+subtitle: Lecture 1
+format: revealjs
+auto-stretch: false
+---
+
+# Course Details
+
+## Slide 1
+
+Some course details
+
+## Slide 2
+
+Some more course details
+
+# Hello data
+
+## Applications exercise: UN Votes
+
+::: task
+Go to Posit Cloud and start the project called UN Votes.
+Render the document titled `unvotes.qmd`.
+Review the narrative and the data visualization you just created.
+Then, change "Turkey" to another country of your choice.
+Re-render the document.
+Show the plot you created to your neighbor and discuss (1) why you chose that country and (2) how this new visualization is different than the original (and what that says about country politics, if anything).
+:::
