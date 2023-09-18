@@ -1,6 +1,9 @@
 ---
 title: "Ex 1.1: UN Votes"
 editor: visual
+webr:
+  channel-type: "post-message"
+  packages: ['tidyverse', 'scales', 'DT', 'unvotes']
 filters:
   - webr
 ---
