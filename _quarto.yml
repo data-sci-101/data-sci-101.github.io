@@ -63,8 +63,8 @@ website:
 format:
   html:
     theme:
-      light: [cosmo, style/sta101.scss]
-      dark: [cosmo, style/sta101.scss, style/dark.scss]
+      light: [cosmo, style/data-sci-101.scss]
+      dark: [cosmo, style/data-sci-101.scss, style/dark.scss]
     linkcolor: "#2e5189"
     toc: true
     code-copy: true
