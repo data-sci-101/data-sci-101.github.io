@@ -134,6 +134,61 @@
     ]
   },
   {
+    "objectID": "hw/hw-1.html#hello-github",
+    "href": "hw/hw-1.html#hello-github",
+    "title": "HW 1 - Data visualization",
+    "section": "Hello GitHub",
+    "text": "Hello GitHub\n\nOnce you’re in the project, go to the Console and run\n\nusethis::create_github_token()\n\nOn the page that pops open in your browser, create a new GitHub Personal Access Token (i.e., sort of like a password you store):\n\nDescribe the token’s use case under Note, e.g., hw-1\nExtend expiration date to 90 days\nScroll down and click on Generate Token\n\nCopy the token by clicking on .\nGo back to Posit Cloud, to your Console, and run\n\ngitcreds::gitcreds_set()\n\nand paste the token you just copied.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#hello-git",
+    "href": "hw/hw-1.html#hello-git",
+    "title": "HW 1 - Data visualization",
+    "section": "Hello Git",
+    "text": "Hello Git\nIntroduce yourself to Git with\n\nusethis::use_git_config(\n  user.name = \"Mine Çetinkaya-Rundel\",\n  user.email = \"cetinkaya.mine@gmail.com\"\n)\n\nreplacing your name and email (that you used to create your GitHub account) with mine.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#yaml",
+    "href": "hw/hw-1.html#yaml",
+    "title": "HW 1 - Data visualization",
+    "section": "YAML",
+    "text": "YAML\nThe top portion of your R Markdown file (between the three dashed lines) is called YAML. It stands for “YAML Ain’t Markup Language”. It is a human friendly data serialization standard for all programming languages. All you need to know is that this area is called the YAML (we will refer to it as such) and that it contains meta information about your document.\n\n\n\n\n\n\nImportant\n\n\n\nOpen the Quarto (.qmd) file in your project, change the author name to your name, and render the document. Examine the rendered document.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#committing-changes",
+    "href": "hw/hw-1.html#committing-changes",
+    "title": "HW 1 - Data visualization",
+    "section": "Committing changes",
+    "text": "Committing changes\nNow, go to the Git pane in your RStudio instance. This will be in the top right hand corner in a separate tab.\nIf you have made changes to your Quarto (.qmd) file, you should see it listed here. Click on it to select it in this list and then click on Diff. This shows you the difference between the last committed state of the document and its current state including changes. You should see deletions in red and additions in green.\nIf you’re happy with these changes, we’ll prepare the changes to be pushed to your remote repository. First, stage your changes by checking the appropriate box on the files you want to prepare. Next, write a meaningful commit message (for instance, “updated author name”) in the Commit message box. Finally, click Commit. Note that every commit needs to have a commit message associated with it.\nYou don’t have to commit after every change, as this would get quite tedious. You should commit states that are meaningful to you for inspection, comparison, or restoration.\nIn the first few assignments we will tell you exactly when to commit and in some cases, what commit message to use. As the semester progresses we will let you make these decisions.\nNow let’s make sure all the changes went to GitHub. Go to your GitHub repo and refresh the page. You should see your commit message next to the updated files. If you see this, all your changes are on GitHub and you’re good to go!",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
+    "objectID": "hw/hw-1.html#push-changes",
+    "href": "hw/hw-1.html#push-changes",
+    "title": "HW 1 - Data visualization",
+    "section": "Push changes",
+    "text": "Push changes\nNow that you have made an update and committed this change, it’s time to push these changes to your repo on GitHub.\nIn order to push your changes to GitHub, you must have staged your commit to be pushed. click on Push.",
+    "crumbs": [
+      "HW",
+      "HW 1"
+    ]
+  },
+  {
     "objectID": "hw/hw-1.html#packages",
     "href": "hw/hw-1.html#packages",
     "title": "HW 1 - Data visualization",
